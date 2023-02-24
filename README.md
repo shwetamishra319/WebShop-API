@@ -5,15 +5,18 @@ Public Repository link - https://github.com/shwetamishra319/WebShop-API.git
 
 ### Setup database
 Create a database - WebShop and change the DB credentials in .env file.
-Run the artisan command to migrate all tables- *php artisan migrate*
+
+Run the artisan command to migrate all tables- `php artisan migrate`
+
 All the migration files are stored in **WebShop-API/database/migrations/** folder and the model files are stored in **WebShop-API/app/Models** folder.
 
 ### Import master data from CSV files
 ImportMasterData command is stored in **WebShop-API/app/console/commands** folder,
 
 In the ImportMasterData.php file, we define the CSV file URLs for customers and products, and use the **importCustomers** and **importProducts** methods to import the data from the CSV files. For now, I have added the CSV file in **Storage/app/public** folder.
+
 Here I am processing the file in smaller chunks instead of loading the entire file into memory at once. This can help to avoid memory issues when importing large CSV files.
-To run the command, we can use the following artisan command- *php artisan import:masterdata*
+To run the command, we can use the following artisan command- `php artisan import:masterdata`
 
 ### Expose Order Data as REST Service
 
